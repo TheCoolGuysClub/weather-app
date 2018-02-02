@@ -21,8 +21,10 @@ const argv = yargs
       if(response.data.status ==="ZERO_RESULTS"){
         throw new Error(`Unable to find that address`);
       }else{
+        const lag = response.data.results[0].geometry.location.lat;
       console.log(response.data.results[0].formatted_address);
-      console.log(response.data.results[0].lagitude);
+      console.log(response.data.results[0].geometry.location.lat);
+      console.log(response.data.results[0].geometry.location.lng);
       // const wethercodeURL = `https://api.darksky.net/forecast/7fa261da4fc6cad0aef6384618ce197e/${response.data.results[0].lagitude},${response.data.results[0].longitude}`
       // axios.get(wethercodeURL)
       // .then((response)=>{
