@@ -26,10 +26,14 @@ const weatherResults=(lag,long,callback)=>{
         const hour = new Date().getHours();
         const min = new Date().getMinutes();
         const sec = new Date().getSeconds();
+        const icon = body.currently.icon;
+        console.log(" (╯°□°）╯︵ ┻━┻");
         console.log(`The temperature is ${temperature} degrees, for me, it feels like ${apperntTemperature} degrees`);
         console.log(`the visibility is ${visibility}`);
         console.log(`the nearest storm is about ${nearestSotrmDistance} miles away`);
         console.log(`The current date is ${month}/${day}/${year},the time is ${hour}:${min}:${sec}`);
+        console.log("┻━┻ミ＼(≧ﾛ≦＼)");
+        console.log(`The weather is ${icon}`);
         // console.log(`The sun is up for ${sunriseTime} seconds! And will set in ${sunsetTime} seconds!`);
       }
   else {
