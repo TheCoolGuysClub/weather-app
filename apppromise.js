@@ -1,6 +1,6 @@
 const yargs = require(`yargs`);
 const axios = require(`axios`);
-const geocode = (`./geocode/geopromise.js`)
+const geocode = require(`./geocode/geopromise.js`)
 const argv = yargs
 .options({
   address:{
@@ -15,12 +15,13 @@ const argv = yargs
   const encodedAddress = encodeURIComponent(argv.address);
   const key = "AIzaSyCVSOKY3vqiKKtcYaFL5F9cRcHslWZCbTI";
   const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${key}`;
-  geocode.geocodeAddress(argv.a,errorMessage) => {
+  geocode.geocodeAddress(argv.a,(errorMessage,results) => {
     //if errormessage is undefined then it treated it as false
     //if it is definded, then it treated it as true
     if (errorMessage) {
       console.log(errorMessage);
     }
+    
   // axios.get(geocodeUrl)
   //   .then((response)=>{
   //     if(response.data.status ==="ZERO_RESULTS"){
