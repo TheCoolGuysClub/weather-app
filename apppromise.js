@@ -65,7 +65,7 @@ const argv = yargs
         }
       //we throw an error because that address does not exists
         else if(error.message){
-          console.log(error);
+          // console.log(error);
           console.log(`CAUGHT ERROR!`);
           console.log(error.message);
         }
