@@ -35,7 +35,7 @@ const argv = yargs
         if(response.data.status ==="ZERO_RESULTS"){
           throw new Error(`Unable to find that address`);
         }else{
-          const timezone = response.data.timezon;
+          const timezone = response.data.timezone;
           const temperature = response.data.currently.temperature;
           const aptemperature = response.data.currently.apparentTemperature;
           const visibility = response.data.currently.visibility;
