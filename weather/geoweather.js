@@ -1,12 +1,7 @@
 const axios = require(`axios`);
 
 const geoweather = (lag,lng,callback)=>{
-//   // axios.get(geocodeUrl)
-//   //   .then((response)=>{
-//   //     if(response.data.status ==="ZERO_RESULTS"){
-//   //       throw new Error(`Unable to find that address`);
-//   //     }
-//   //     else{
+
         const wethercodeURL = `https://api.darksky.net/forecast/7fa261da4fc6cad0aef6384618ce197e/${lag},${lng}`;
         // console.log(wethercodeURL);
         axios.get(wethercodeURL)

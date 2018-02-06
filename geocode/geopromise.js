@@ -17,11 +17,6 @@ const geocodeAddress = (address,callback)=>{
         lag: response.data.results[0].geometry.location.lat
       },undefined);
 
-
-      // console.log(response.data.results[0].formatted_address);
-      // console.log(lag);
-      // console.log(lng);
-
     }
   })
 }
