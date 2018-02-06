@@ -8,17 +8,23 @@ const geocodeAddress = (address,callback)=>{
   axios.get(geocodeUrl)
   .then((response)=>{
     if(response.data.status ==="ZERO_RESULTS"){
-      throw new Error(`Unable to find that address`);
+      callback("This address does not exists",undefined);
     }
     else{
-      const lng = response.data.results[0].geometry.location.lng;
-      const lag = response.data.results[0].geometry.location.lat;
-      console.log(response.data.results[0].formatted_address);
-  }
-})
+      callback({
+        address:response.data.results[0].formatted_address,
+        lng: response.data.results[0].geometry.location.lng,
+        lag: response.data.results[0].geometry.location.lat
+      },undefined);
+
+
+      // console.log(response.data.results[0].formatted_address);
+      // console.log(lag);
+      // console.log(lng);
+
+    }
+  })
 }
 module.exports={
-
   geocodeAddress
 }
-;
